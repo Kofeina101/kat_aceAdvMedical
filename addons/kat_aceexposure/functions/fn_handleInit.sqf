@@ -1,19 +1,21 @@
 /*
  * Author: Katalam
- * Called when a unit is initialized via XEH_init
+ * Handles unit init.
  *
  * Arguments:
- * 0: The Unit <OBJECT>
+ * 0: Unit <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * [cursorTarget] call kat_aceExposure_fnc_handleInit;
+ * [player] call kat_aceExposure_fnc_handleInit;
  *
  * Public: No
  */
 
 params ["_unit"];
+
+if !(kat_aceExposure_enable) exitWith {};
 
 _unit call kat_aceExposure_fnc_init;

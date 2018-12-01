@@ -14,8 +14,8 @@ class CfgPatches
 			"ace_medical",
       "cba_settings"
 		};
-		version = "0.5";
-		versionStr = "0.5";
+		version = "0.1";
+		versionStr = "0.1";
 		author = "[SeL] Katalam";
 		authorUrl = "http://spezialeinheit-luchs.de/";
     };
@@ -33,6 +33,9 @@ class CfgFunctions {
         class events{};
         class handleInit{};
         class init{};
+        class isAttenuated{};
+        class isInside{};
+        class mainLoop{};
         class registerSettings{};
 		};
 	};
@@ -60,13 +63,11 @@ class cfgVehicles {
 class Man;
 	class CAManBase: Man {
 		class ACE_Actions {
-      class ACE_ArmLeft {
-        class FieldDressing;
-        class Morphine;
-        class Painkillers: Morphine {
+      class ACE_Torso {
+        class Temperature {
           displayName = $STR_KAT_aceCirculation_Inject_Painkillers;
-          condition = "[_player, _target, 'hand_l', 'Painkillers'] call ace_medical_fnc_canTreatCached";
-          statement = "[_player, _target, 'hand_l', 'Painkillers'] call ace_medical_fnc_treatment";
+          condition = "[_player, _target, 'hand_l', 'Temperature'] call ace_medical_fnc_canTreatCached";
+          statement = "[_player, _target, 'hand_l', 'Temperature'] call ace_medical_fnc_treatment";
         };
       };
     };
@@ -75,9 +76,7 @@ class Man;
 
 class ACE_Medical_Actions {
 	class Advanced {
-    class FieldDressing;
-    class Morphine;
-    class Painkillers: Morphine {
+    class Temperature {
       displayName = "$STR_kat_aceAirway_Larynx_Display";
       displayNameProgress = $STR_kat_aceAirway_action_placing;
       category = "airway";
@@ -87,7 +86,7 @@ class ACE_Medical_Actions {
       requiredMedic = 1;
       treatmentTime = 5;
       items[] = {"KAT_larynx"};
-      condition = "!([_target] call ace_common_fnc_isAwake) && (missionNamespace getVariable ['kat_aceAirway_enable',true])";
+      condition = "!([_target] call ace_common_fnc_isAwake) && (missionNamespace getVariable ['kat_aceExposure_enable',true])";
       patientStateCondition = 0;
       callbackSuccess = "[_player, _target, 'Larynxtubus'] call kat_aceAirway_fnc_treatmentAdvanced_airway";
       callbackFailure = "";

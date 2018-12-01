@@ -3,17 +3,17 @@
  * Initializes unit variables.
  *
  * Arguments:
- * 0: The Unit <OBJECT>
+ * 0: Unit <OBJECT>
  *
  * Return Value:
  * None
  *
  * Example:
- * [cursorTarget] call kat_aceExposure_fnc_init
+ * [player] call kat_aceExposure_fnc_init;
  *
  * Public: No
  */
 
 params ["_unit"];
 
-_unit setVariable ["kat_aceExposure_X", "X", true];
+_unit setVariable ["kat_aceExposure_temperature", 36.7, true];
