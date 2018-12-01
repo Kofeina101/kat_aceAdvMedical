@@ -29,3 +29,5 @@ _unit setVariable ["kat_aceCirculation_use", false, true];
  * kat_aceCirculation_loadout
  * You can add your unit class in the variable above and it will show up at the dog tag. If you don't it will take the localized displayName of the unit.
  */
+
+_unit setVariable ["kat_aceCirculation_internalInjuries", [0,0,0,0,0,0], true];

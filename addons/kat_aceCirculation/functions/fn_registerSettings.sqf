@@ -26,4 +26,14 @@
 	true
 ] call CBA_Settings_fnc_init;
 
+//Enable internal injuries
+[
+	"kat_aceCirculation_internalInjuries_enable",
+	"CHECKBOX",
+	localize "STR_kat_aceCirculation_SETTING_internalInjuries",
+	CBA_SETTINGS_CAT,
+	[true],
+	true
+] call CBA_Settings_fnc_init;
+
 nil;

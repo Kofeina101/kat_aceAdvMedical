@@ -16,5 +16,8 @@
 
 params ["_unit"];
 
-//_unit addEventHandler ["HandleDamage", {_this call kat_aceAirway_fnc_handleDamage_airway;}];
+if !(kat_aceCirculation_internalInjuries_enable) then {
+	_unit addEventHandler ["HandleDamage", {_this call kat_aceCirculation_fnc_handleDamage_internalInjuries;}];
+};
+
 _unit call kat_aceCirculation_fnc_init;
