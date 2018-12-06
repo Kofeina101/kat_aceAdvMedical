@@ -16,7 +16,7 @@
  * Public: No
  */
 
-params ["_unit", "_selectionName", "_amountOfDamage"];
+params ["_unit", "_selectionName", "_amountOfDamage", "", "_typeOfDamage"];
 
 if !(kat_aceCirculation_internalInjuries_enable) exitWith {};
 
@@ -24,6 +24,8 @@ if (_amountOfDamage > 0.75) then {
   if (random(100) <= kat_aceCirculation_internalInjuries_probability) then {
     private _selection = _unit getVariable ["kat_aceCirculation_internalInjuries", [0,0,0,0,0,0]];
     private _selectionNumber = [_selectionName] call ace_medical_fnc_selectionNameToNumber;
+    private _woundSource = getArray (configfile >> "ACE_Medical_Advanced" >> "Injuries" >> "wounds" >> "internal" >> "causes");
+    if !(_typeOfDamage in _woundSource) exitWith {};
     if !((_selection select _selectionNumber) > 0) then {
       _selection set [_selectionNumber, 1];
       _unit setVariable ["kat_aceCirculation_internalInjuries", _selection, true];

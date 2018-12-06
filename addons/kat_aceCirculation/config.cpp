@@ -53,8 +53,10 @@ class CfgFunctions {
 		class functions {
         class bloodType{};
         class compatible{};
+        class countAssistant_Operation{};
         class events{};
         class groupID{};
+        class handleDamage_internalInjuries{};
         class handleInit{};
         class handleOperation{};
         class handleTreatment{};
@@ -64,6 +66,8 @@ class CfgFunctions {
         class removeItemfromMag{};
         class treatmentAdvanced_IV{};
         class treatmentAdvanced_X{};
+        class treatmentAdvanced_Assistant{};
+        class treatmentAdvanced_Operation{};
 		};
 	};
   class kat_aceDogtag {
@@ -416,6 +420,18 @@ class ACE_Medical_Actions {
 	};
 };
 class ACE_Medical_Advanced {
+  class Injuries {
+    class wounds {
+      class Internal {
+        bleedingRate = 0.01;
+        causes[] = {"bullet", "grenade", "explosive"};
+        minDamage = 0.50;
+        name = "Internal Wound";
+        pain = 0.6;
+        selections[] = {"All"};
+      };
+    };
+  };
   class Treatment {
     class IV {
       class BloodIV;
