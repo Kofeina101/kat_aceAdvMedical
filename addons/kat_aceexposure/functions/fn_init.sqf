@@ -17,3 +17,4 @@
 params ["_unit"];
 
 _unit setVariable ["kat_aceExposure_temperature", 36.7, true];
+_unit setVariable ["kat_aceExposure_clothesWet", false, true];

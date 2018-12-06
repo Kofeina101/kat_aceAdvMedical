@@ -17,6 +17,9 @@
 [{
 	params ["_unit"];
 	private _oldTemp = _unit getVariable ["kat_aceExposure_temperature", 37.7];
+	if (_unit call kat_aceExposure_fnc_isInside || _unit call kat_aceExposure_fnc_isAttenuated) then {
+		[_unit, CBA_MissionTime] call kat_aceExposure_fnc_heat;
+	};
 }, 1, [_this]] call CBA_fnc_addPerFrameHandler;
 
 /*
@@ -33,5 +36,13 @@
  * bloodpressure <ARRAY> [down, up];
  * vehicle player
  * open vehicle -> isAttenuated;
+ *
+ * Config: Clothes isolation value
+ * Function: Clothes wet
+ * Function: Clothes dry
+ * Function: Main Loop
+ * Function: heat
+ *
+ *
  *
  */

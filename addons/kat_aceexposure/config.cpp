@@ -32,9 +32,11 @@ class CfgFunctions {
 		class functions {
         class events{};
         class handleInit{};
+        class heat{};
         class init{};
         class isAttenuated{};
         class isInside{};
+        class isWet{};
         class mainLoop{};
         class registerSettings{};
 		};
