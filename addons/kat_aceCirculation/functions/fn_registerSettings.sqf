@@ -36,4 +36,14 @@
 	true
 ] call CBA_Settings_fnc_init;
 
+// internal Injuries probability
+[
+	"kat_aceCirculation_internalInjuries_probability",
+	"SLIDER",
+	localize "STR_kat_aceAirway_SETTING_collapsed", // TO-DO loalize
+	CBA_SETTINGS_CAT,
+	[0, 100, 5, 0],
+	true
+] call CBA_Settings_fnc_init;
+
 nil;

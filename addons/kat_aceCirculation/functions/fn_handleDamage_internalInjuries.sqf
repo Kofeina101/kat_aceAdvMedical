@@ -21,8 +21,8 @@ params ["_unit", "_selectionName", "_amountOfDamage"];
 if !(kat_aceCirculation_internalInjuries_enable) exitWith {};
 
 if (_amountOfDamage > 0.75) then {
-  if (random(100) <= kat_aceAirway_probability_collapsed) then {
-    private _selection = _unit getVariable ["kat_aceCirculation_internalInjuries", false];
+  if (random(100) <= kat_aceCirculation_internalInjuries_probability) then {
+    private _selection = _unit getVariable ["kat_aceCirculation_internalInjuries", [0,0,0,0,0,0]];
     private _selectionNumber = [_selectionName] call ace_medical_fnc_selectionNameToNumber;
     if !((_selection select _selectionNumber) > 0) then {
       _selection set [_selectionNumber, 1];

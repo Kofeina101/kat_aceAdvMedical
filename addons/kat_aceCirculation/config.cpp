@@ -56,6 +56,7 @@ class CfgFunctions {
         class events{};
         class groupID{};
         class handleInit{};
+        class handleOperation{};
         class handleTreatment{};
         class init{};
         class registerSettings{};
