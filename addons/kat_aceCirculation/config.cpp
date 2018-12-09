@@ -421,6 +421,17 @@ class ACE_Medical_Actions {
 };
 class ACE_Medical_Advanced {
   class Injuries {
+    class internal {
+      class artery {
+        bleedingRate = 0.5;
+        causes[] = {"bullet", "grenade", "explosive"};
+        minDamage = 0.50;
+        name = "Internal Wound";
+        pain = 0.6;
+        selections[] = {"All"};
+      };
+    };
+/*
     class wounds {
       class Internal {
         bleedingRate = 0.01;
@@ -431,6 +442,7 @@ class ACE_Medical_Advanced {
         selections[] = {"All"};
       };
     };
+    */
   };
   class Treatment {
     class IV {
